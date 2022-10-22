@@ -1,0 +1,491 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Teko-Regular';
+  src: local('Teko-Regular'), url('./fonts/Teko-Regular.ttf') format('truetype');
+}
+// @font-face {
+//   font-family: 'HotPursuitRegular';
+//   src: local('HotPursuitRegular'), url('./fonts/HotPursuitRegular.ttf') format('truetype');
+// }
+// @font-face {
+//   font-family: 'HotPursuitRegular';
+//   src: local('HotPursuitRegular'), url('./fonts/HotPursuitRegular.ttf') format('truetype');
+// }
+// @font-face {
+//   font-family: 'HotPursuitRegular';
+//   src: local('HotPursuitRegular'), url('./fonts/HotPursuitRegular.ttf') format('truetype');
+// }
+// @font-face {
+//   font-family: 'HotPursuitRegular';
+//   src: local('HotPursuitRegular'), url('./fonts/HotPursuitRegular.ttf') format('truetype');
+// }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1 {
+  text-transform: uppercase;
+  line-height: 115.8%;
+  font-weight: 600;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Allow percentage-based heights in the application */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: Teko-Regular;
+  color: #d2d2d2;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  -webkit-user-drag: none;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Create a root stacking context */
+#root {
+  isolation: isolate;
+}
+
+/* NHDz */
+
+// *,
+// *::before,
+// *::after {
+//   font-family: 'Inter', sans-serif; // inter-ui
+// }
+
+.header {
+  position: relative;
+}
+
+.hero-section {
+  background-image: url('./assets/cover-bg.png');
+  background-size: cover;  
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub-title {
+  line-height: 171.02%;
+  font-family: 'Inter';
+}
+
+.btn-launch,
+.btn-marketplace {
+  text-transform: uppercase;
+  line-height: 144%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-launch {
+  color: #0e0e0e;
+  clip-path: polygon(12% 0, 100% 1%, 100% 50%, 88% 100%, 0 100%, 0% 50%);
+  background: #feda00;
+}
+
+.btn-marketplace {
+  color: #feda00;
+  position: relative;
+  z-index: 0;
+}
+
+.btn-marketplace:before,
+.btn-marketplace:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  clip-path: polygon(12% 0, 100% 1%, 100% 50%, 88% 100%, 0 100%, 0% 50%);
+  transition: 1s all;
+  background: #000;
+}
+.btn-marketplace:before {
+  background: #feda00;
+  transform: scale(1.01, 1.05);
+}
+
+.data-section {
+  background: #feda00;
+  display: flex;
+  justify-content: space-between;
+  line-height: 142.5%;
+  color: #505050;
+}
+
+.data-number {
+  color: #0e0e0e;
+  line-height: 142.5%;
+  font-weight: 600;
+}
+
+.intro-section {
+  background-image: url('./assets/bg-layer.png');
+  background-size: 100%;
+  background-repeat: repeat;
+}
+
+.algobet-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-weight: 600;
+  line-height: 142.5%;
+}
+
+.intro-subtitle {
+  color: #d2d2d2;
+  line-height: 120%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h3 {
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 142.5%;
+}
+
+.btn-feature-group {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-feature {
+  display: flex;
+}
+
+footer {
+  background: #feda00;
+}
+
+.footer {
+  display: flex;
+  border-top: 1px solid #000000;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name-footer {
+  color: #000000;
+  line-height: 142.5%;
+  font-weight: 600;
+}
+
+.footer-item {
+  color: #0e0e0e;
+  font-family: Inter;
+  line-height: 125%;
+  text-decoration: none;
+  display: block;
+}
+
+.footer-item.active {
+  font-weight: 600;
+}
+
+.social-horizon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  color: #ffffff;
+  line-height: 142.5%;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.nav-item.active {
+  color: #feda00;
+  font-weight: 500;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.card-item {
+  // background: #FEDA00;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.card-img {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+
+.bg-nft {
+  background: linear-gradient(180deg, rgba(254, 218, 0, 0) 0%, #feda00 100%);
+  clip-path: polygon(22% 0, 100% 0%, 78% 100%, 0% 100%);
+}
+
+.img-nft {
+  clip-path: polygon(22% 0, 100% 0%, 78% 100%, 0% 100%);
+  position: absolute;
+}
+
+.info-nft {
+  background-color: #feda00;
+  clip-path: polygon(7% 0, 100% 0%, 93% 100%, 0% 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #0e0e0e;
+  line-height: 144%;
+}
+.info-nft h3 {
+  font-weight: 600;
+  color: #0e0e0e;
+}
+
+.card-comp {
+  position: relative;
+}
+
+.slide-left,
+.slide-right {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+}
+
+#scroll-bar::-webkit-scrollbar {
+  display: none !important;
+}
+/* Track */
+#scroll-bar::-webkit-scrollbar-track {
+  display: none !important;
+}
+/* Handle */
+#scroll-bar::-webkit-scrollbar-thumb {
+  display: none !important;
+}
+
+.subcrible {
+  display: flex;
+  font-family: Inter;
+}
+
+.input-subcrible {
+  background: #0e0e0e;
+  clip-path: polygon(3% 0%, 100% 0%, 97% 100%, 0% 100%);
+  color: #fff;
+  border: none;
+}
+
+.btn-subcrible {
+  background: rgba(255, 255, 255, 0.5);
+  color: #000000;
+  font-weight: 700;
+  clip-path: polygon(11% 0%, 100% 0%, 89% 100%, 0% 100%);
+  border-radius: 0;
+  border: none;
+}
+
+.dropdown-nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.dropdown-comp {
+  position: absolute;
+  top: 0px;
+  right: -50%;
+  display: none;
+}
+
+.dropdown {
+  background-color: #feda00;
+  clip-path: polygon(11% 0%, 100% 0%, 89% 100%, 0% 100%);
+}
+
+.dropdown-main {
+  background-color: #000;
+  clip-path: polygon(9.5% 0%, 100% 0%, 90.5% 100%, 0% 100%);
+}
+
+.nav-item:hover {
+  color: #feda00;
+}
+
+.dd-item {
+  white-space: nowrap;
+  line-height: 145%;
+  color: #fff;
+}
+
+.dropdown-nav:hover .dropdown-comp {
+  display: block;
+}
+
+.dd-item:hover {
+  color: #feda00;
+}
+
+.popup-join {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: #0d0d0de6;
+}
+
+.popup-join-fg {
+  background-image: url('./assets/bg-popup.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  color: #fff;
+}
+
+.close-popup-join {
+  position: absolute;
+  cursor: pointer;
+}
+
+.popup-join-input-div {
+  background-image: url('./assets/bg-input-popup.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.popup-join-input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  line-height: 144%;
+}
+
+.btn-join {
+  border: none;
+  cursor: pointer;
+  background-image: url('./assets/bg-btn-join.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-weight: 700;
+  line-height: 120%;
+  font-family: 'Inter';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+
+.join-group {
+  display: flex;
+  position: absolute;
+}
+
+input:focus, input:active {
+  outline: none !important;
+  border: none !important;
+}
