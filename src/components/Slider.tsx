@@ -13,7 +13,7 @@ export default function Slider({ unitScreen }: { unitScreen: any }) {
   }, [])
 
   return (
-    <div className="card-comp">
+    <div className="card-comp" data-aos="flip-down">
       <img
         id="scroll-left"
         style={{ left: unitScreen * -100, width: unitScreen * 55, height: unitScreen * 40 }}

@@ -2,7 +2,37 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useMemo, useState } from 'react'
 import _ from 'lodash'
+import smoothscroll from 'smoothscroll-polyfill'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import Slider from 'components/Slider'
+
+smoothscroll.polyfill()
+
+AOS.init()
+
+// You can also pass an optional settings object
+// below listed default settings
+AOS.init({
+  // Global settings:
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: 'aos-init', // class applied after initialization
+  animatedClassName: 'aos-animate', // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 1000, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+})
 
 const Algobet = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
@@ -19,7 +49,7 @@ const Algobet = () => {
 
   return (
     <div>
-      <div className="popup-join" style={{ display: openPopup ? 'flex' : 'none' }}>
+      <div className="popup-join" data-aos="fade-up" style={{ display: openPopup ? 'flex' : 'none' }}>
         <div className="popup-join-fg" style={{ width: unitScreen * 782, height: unitScreen * 385 }}>
           <img
             style={{ top: unitScreen * 15, right: unitScreen * 20 }}
@@ -30,6 +60,9 @@ const Algobet = () => {
             alt="close"
             onClick={() => setOpenPopup(false)}
           />
+          <div style={{ fontSize: unitScreen * 22, top: unitScreen * 20, left: unitScreen * 138  }} className="text-comming-soon">
+            Comming Soon
+          </div>
           <div className="join-group" style={{ top: unitScreen * 90, left: unitScreen * 104 }}>
             <div className="popup-join-input-div" style={{ width: unitScreen * 466, height: unitScreen * 80 }}>
               <input
@@ -40,9 +73,9 @@ const Algobet = () => {
             </div>
             <div
               className="btn-join"
-              style={{ width: unitScreen * 142, height: unitScreen * 80, fontSize: unitScreen * 20 }}
+              style={{ width: unitScreen * 142, height: unitScreen * 80, fontSize: unitScreen * 18 }}
             >
-              Join Now
+              Follow
             </div>
           </div>
           <div className="join-group align-items-end" style={{ top: unitScreen * 240, left: unitScreen * 70 }}>
@@ -101,14 +134,12 @@ const Algobet = () => {
             </div>
           </div>
         </div>
-        {/* <div className='popup-join-bg'>
-        <div className='popup-join-fg' style={{width: unitScreen * 728, height: unitScreen * 385}}>
-          ok
-        </div>
-        </div> */}
       </div>
-      <div className="hero-section" style={{ padding: `${unitScreen * 55}px ${unitScreen * 78}px`, height: unitScreen * 1080 }}>
-        <div>
+      <div
+        className="hero-section"
+        style={{ padding: `${unitScreen * 55}px ${unitScreen * 78}px`, height: unitScreen * 1080 }}
+      >
+        <div data-aos="fade-right">
           <div>
             <img style={{ width: unitScreen * 80 }} className="logo" src="/images/logo.svg" alt="logo" />
           </div>
@@ -149,26 +180,46 @@ const Algobet = () => {
           </div>
         </div>
         <div className="d-flex justify-content-end">
-          <div>
+          <div data-aos="fade-down">
             <div className="nav" style={{ marginRight: unitScreen * 135 }}>
               <div className="nav-item active" style={{ marginRight: unitScreen * 68, fontSize: unitScreen * 30 }}>
                 Home
               </div>
-              <div className="nav-item" style={{ marginRight: unitScreen * 68, fontSize: unitScreen * 30 }}>
+              <a
+                href="/#what-is-algobet"
+                className="nav-item"
+                style={{ marginRight: unitScreen * 68, fontSize: unitScreen * 30 }}
+              >
                 What is Algobet
-              </div>
-              <div className="nav-item" style={{ marginRight: unitScreen * 68, fontSize: unitScreen * 30 }}>
+              </a>
+              <a
+                href="/#features"
+                className="nav-item"
+                style={{ marginRight: unitScreen * 68, fontSize: unitScreen * 30 }}
+              >
                 Features
-              </div>
-              <div className="nav-item" style={{ marginRight: unitScreen * 68, fontSize: unitScreen * 30 }}>
+              </a>
+              <a
+                href="/#token"
+                className="nav-item"
+                style={{ marginRight: unitScreen * 68, fontSize: unitScreen * 30 }}
+              >
                 Token
-              </div>
-              <div className="nav-item" style={{ marginRight: unitScreen * 68, fontSize: unitScreen * 30 }}>
+              </a>
+              <a
+                href="/#roadmap"
+                className="nav-item"
+                style={{ marginRight: unitScreen * 68, fontSize: unitScreen * 30 }}
+              >
                 Roadmap
-              </div>
-              <div className="nav-item" style={{ marginRight: unitScreen * 68, fontSize: unitScreen * 30 }}>
-                Parter
-              </div>
+              </a>
+              <a
+                href="/#partner"
+                className="nav-item"
+                style={{ marginRight: unitScreen * 68, fontSize: unitScreen * 30 }}
+              >
+                Partner
+              </a>
               <div className="nav-item" style={{ fontSize: unitScreen * 30 }}>
                 <div className="dropdown-nav">
                   Docs
@@ -200,7 +251,7 @@ const Algobet = () => {
             </div>
           </div>
 
-          <div className="social-horizon" style={{ marginTop: unitScreen * 320 }}>
+          <div data-aos="fade-left" className="social-horizon" style={{ marginTop: unitScreen * 320 }}>
             <img
               style={{
                 height: unitScreen * 393,
@@ -273,9 +324,9 @@ const Algobet = () => {
           </div>
         </div>
       </div>
-      <div className="intro-section">
-        <div className="algobet-intro" style={{ paddingTop: unitScreen * 123 }}>
-          <h2 style={{ fontSize: unitScreen * 70 }}>
+      <div className="intro-section" style={{ paddingTop: unitScreen * 123 }}>
+        <div className="algobet-intro" style={{ paddingTop: unitScreen * 60 }} id="what-is-algobet">
+          <h2 style={{ fontSize: unitScreen * 70 }} data-aos="zoom-in">
             <span style={{ color: '#FFFFFF' }}>What is </span>
             <span style={{ color: '#FEDA00' }}>Algobet</span>
           </h2>
@@ -295,6 +346,7 @@ const Algobet = () => {
             </div>
           </div>
           <img
+            data-aos="slide-up"
             style={{ marginTop: unitScreen * 36 }}
             width={unitScreen * 1320}
             height={unitScreen * 579}
@@ -302,8 +354,8 @@ const Algobet = () => {
             alt="functions"
           />
         </div>
-        <div className="algobet-intro" style={{ paddingTop: unitScreen * 212 }}>
-          <h2 style={{ fontSize: unitScreen * 70 }}>
+        <div className="algobet-intro" style={{ paddingTop: unitScreen * 212, paddingBottom: unitScreen * 41 }} id="product">
+          <h2 style={{ fontSize: unitScreen * 70 }} data-aos="zoom-in">
             <span style={{ color: '#FFFFFF' }}>Our </span>
             <span style={{ color: '#FEDA00' }}>Product</span>
           </h2>
@@ -313,10 +365,16 @@ const Algobet = () => {
             src="/images/header-divider.svg"
             alt="header-divider"
           />
-          <img width={unitScreen * 1332} height={unitScreen * 883} src="/images/devices.png" alt="devices" />
+          <img
+            data-aos="fade-up"
+            width={unitScreen * 1332}
+            height={unitScreen * 883}
+            src="/images/devices.png"
+            alt="devices"
+          />
         </div>
-        <div className="algobet-intro" style={{ paddingTop: unitScreen * 101 }}>
-          <h2 style={{ fontSize: unitScreen * 70 }}>
+        <div className="algobet-intro" style={{ paddingTop: unitScreen * 60, paddingBottom: unitScreen * 163  }} id="features">
+          <h2 style={{ fontSize: unitScreen * 70 }} data-aos="zoom-in">
             <span style={{ color: '#FFFFFF' }}>Features</span>
           </h2>
           <img
@@ -325,11 +383,17 @@ const Algobet = () => {
             src="/images/header-divider.svg"
             alt="header-divider"
           />
-          <img width={unitScreen * 1324} height={unitScreen * 728} src="/images/features.png" alt="features" />
+          <img
+            data-aos="fade-right"
+            width={unitScreen * 1324}
+            height={unitScreen * 728}
+            src="/images/features.png"
+            alt="features"
+          />
         </div>
 
-        <div className="algobet-intro" style={{ paddingTop: unitScreen * 183 }}>
-          <h2 style={{ fontSize: unitScreen * 70 }}>
+        <div className="algobet-intro" id="token" style={{ paddingTop: unitScreen * 20, paddingBottom: unitScreen * 243 }}>
+          <h2 style={{ fontSize: unitScreen * 70 }} data-aos="zoom-in">
             <span style={{ color: '#FFFFFF' }}>Token </span>
             <span style={{ color: '#FEDA00' }}>AGB</span>
           </h2>
@@ -340,6 +404,7 @@ const Algobet = () => {
             alt="header-divider"
           />
           <img
+            data-aos="slide-right"
             style={{ marginTop: unitScreen * 82 }}
             width={unitScreen * 1320}
             height={unitScreen * 695.5}
@@ -348,8 +413,8 @@ const Algobet = () => {
           />
         </div>
 
-        <div className="algobet-intro" style={{ paddingTop: unitScreen * 283 }}>
-          <h2 style={{ fontSize: unitScreen * 70 }}>
+        <div className="algobet-intro" id="roadmap" style={{ paddingTop: unitScreen * 40, paddingBottom: unitScreen * 200 }}>
+          <h2 style={{ fontSize: unitScreen * 70 }} data-aos="zoom-in">
             <span style={{ color: '#FFFFFF' }}>ROAD</span>
             <span style={{ color: '#FEDA00' }}>MAP</span>
           </h2>
@@ -360,6 +425,7 @@ const Algobet = () => {
             alt="header-divider"
           />
           <img
+            data-aos="fade-right"
             style={{ marginTop: unitScreen * 81 }}
             width={unitScreen * 1331}
             height={unitScreen * 584}
@@ -367,8 +433,8 @@ const Algobet = () => {
             alt="roadmap"
           />
         </div>
-        <div className="algobet-intro" style={{ paddingTop: unitScreen * 200 }}>
-          <h2 style={{ fontSize: unitScreen * 70 }}>
+        <div className="algobet-intro" id="nft" style={{ paddingBottom: unitScreen * 246 }}>
+          <h2 style={{ fontSize: unitScreen * 70 }} data-aos="zoom-in">
             <span style={{ color: '#FEDA00' }}>NFT </span>
             <span style={{ color: '#FFFFFF' }}>Collections</span>
           </h2>
@@ -381,8 +447,12 @@ const Algobet = () => {
           <Slider unitScreen={unitScreen} />
         </div>
 
-        <div className="algobet-intro" style={{ paddingTop: unitScreen * 316, paddingBottom: unitScreen * 180 }}>
-          <h2 style={{ fontSize: unitScreen * 70, textTransform: 'uppercase' }}>
+        <div
+          className="algobet-intro"
+          style={{  paddingTop: unitScreen * 70, paddingBottom: unitScreen * 180 }}
+          id="partner"
+        >
+          <h2 style={{ fontSize: unitScreen * 70, textTransform: 'uppercase' }} data-aos="zoom-in">
             <span style={{ color: '#FFFFFF' }}>Advisors - Backers - </span>
             <span style={{ color: '#FEDA00' }}>Partner</span>
           </h2>
@@ -392,27 +462,31 @@ const Algobet = () => {
             src="/images/header-divider.svg"
             alt="header-divider"
           />
-          <img
-            style={{ marginTop: unitScreen * 97 }}
-            width={unitScreen * 366}
-            height={unitScreen * 99}
-            src="/images/algorand.png"
-            alt="algorand"
-          />
-          <div
-            style={{
-              fontSize: unitScreen * 18,
-              marginTop: unitScreen * 44,
-              maxWidth: unitScreen * 914,
-              fontFamily: 'Inter',
-            }}
-            className="intro-subtitle text-center"
-          >
-            FIFA+ Collect is powered by Algorand, the official blockchain platform of FIFA and the technology of choice
-            for over 2,000 global organisations, governments and digital-native decentralised finance applications. It
-            is a low-cost, carbon neutral blockchain accessible via multiple currencies and payment methods.
+          <div className='d-flex flex-column align-items-center' data-aos="fade-down">
+            <img
+              style={{ marginTop: unitScreen * 97 }}
+              width={unitScreen * 366}
+              height={unitScreen * 99}
+              src="/images/algorand.png"
+              alt="algorand"
+            />
+            <div
+              style={{
+                fontSize: unitScreen * 18,
+                marginTop: unitScreen * 44,
+                maxWidth: unitScreen * 914,
+                fontFamily: 'Inter',
+              }}
+              className="intro-subtitle text-center"
+            >
+              FIFA+ Collect is powered by Algorand, the official blockchain platform of FIFA and the technology of
+              choice for over 2,000 global organisations, governments and digital-native decentralised finance
+              applications. It is a low-cost, carbon neutral blockchain accessible via multiple currencies and payment
+              methods.
+            </div>
           </div>
-          <div className="d-flex align-items-center" style={{ marginTop: unitScreen * 100 }}>
+
+          <div data-aos="fade-up" className="d-flex align-items-center" style={{ marginTop: unitScreen * 100 }}>
             <img
               style={{ marginRight: unitScreen * 82 }}
               width={unitScreen * 275}
@@ -468,13 +542,13 @@ const Algobet = () => {
               <a href="/" className="footer-item active" style={{ marginBottom: unitScreen * 20 }}>
                 Home{' '}
               </a>
-              <a href="/" className="footer-item" style={{ marginBottom: unitScreen * 20 }}>
+              <a href="/#what-is-algobet" className="footer-item" style={{ marginBottom: unitScreen * 20 }}>
                 What is Algobet
               </a>
-              <a href="/" className="footer-item" style={{ marginBottom: unitScreen * 20 }}>
+              <a href="/#token" className="footer-item" style={{ marginBottom: unitScreen * 20 }}>
                 Token
               </a>
-              <a href="/" className="footer-item">
+              <a href="/#roadmap" className="footer-item">
                 Roadmap{' '}
               </a>
             </div>
@@ -493,8 +567,8 @@ const Algobet = () => {
               </a>
             </div>
           </div>
-          <div className="d-flex flex-column align-items-end" style={{fontSize: unitScreen * 16}}>
-            <div className="footer-item" style={{ fontWeight: 500, marginBottom: unitScreen * 30}}>
+          <div className="d-flex flex-column align-items-end" style={{ fontSize: unitScreen * 16 }}>
+            <div className="footer-item" style={{ fontWeight: 500, marginBottom: unitScreen * 30 }}>
               Join Our Community
             </div>
             <div className="d-flex align-items-center">
