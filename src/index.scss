@@ -167,12 +167,20 @@ select {
   color: #0e0e0e;
   clip-path: polygon(12% 0, 100% 1%, 100% 50%, 88% 100%, 0 100%, 0% 50%);
   background: #feda00;
+  &:hover {
+    background-color: #ffd900cc;
+  }
 }
 
 .btn-marketplace {
   color: #feda00;
   position: relative;
   z-index: 0;
+  &:hover {
+    &::before {
+      transform: scale(1.03, 1.15);
+    }
+  }
 }
 
 .btn-marketplace:before,
@@ -187,6 +195,7 @@ select {
   clip-path: polygon(12% 0, 100% 1%, 100% 50%, 88% 100%, 0 100%, 0% 50%);
   transition: 1s all;
   background: #000;
+
 }
 .btn-marketplace:before {
   background: #feda00;
@@ -384,6 +393,9 @@ footer {
   clip-path: polygon(11% 0%, 100% 0%, 89% 100%, 0% 100%);
   border-radius: 0;
   border: none;
+  &:hover {
+    background-color: #ffffffcc;
+  }
 }
 
 .dropdown-nav {
@@ -480,6 +492,9 @@ footer {
   justify-content: center;
   align-items: center;
   color: #000;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .join-group {
