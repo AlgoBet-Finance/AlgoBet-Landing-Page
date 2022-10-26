@@ -56,8 +56,9 @@ export default function Header() {
   // }, [state])
   return (
     <div id="header" className="header">
-      <a href='./'>
-        <img className="logo" src="/images/logo.svg" alt="logo" />
+      <a href='./' className='header-logo'>
+        <img className="" src="/images/logo.svg" alt="logo" />
+        <img className="logo-text" src="/images/ALGOBET.svg" alt="logo" />
       </a>
       <div className="nav desktop">
         <a href="/#home" className="nav-item">
@@ -94,7 +95,7 @@ export default function Header() {
         </div>
       </div>
       <div className="btn btn--close" role="presentation" onClick={() => handelShow()}>
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6 10H42" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M6 24H42" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M6 38H42" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

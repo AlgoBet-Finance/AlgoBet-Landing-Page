@@ -17,18 +17,13 @@
 //   }
 // }
 
-
-
- 
 .header {
   background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1440px;
   width: 100%;
-  padding-right: 4rem;
-  padding-left: 4rem;
+  padding: 20px 4rem;
   margin-right: auto;
   margin-left: auto;
   position: fixed;
@@ -39,18 +34,30 @@
   z-index: 1000;
   backdrop-filter: blur(2px);
   @include mw-768 {
-    // display: block;
     padding: 1rem;
     text-align: center;
-    height: 50px;
   }
   &-logo {
     color: $color-2;
-    // text-transform: uppercase;
+    display: flex;
     font-weight: 700;
     font-size: 1.25rem;
-
- 
+    img {
+      height: 60px;
+      @include mw-1500{
+        height: 40px;
+      }
+    }
+    .logo-text {
+      width: 200px;
+      margin-left: 10px;
+      @include mw-1500 {
+       width: 120px;
+      }
+      @include mw-768 {
+        display: none;
+      }
+    }
   }
   .desktop {
     display: flex;
@@ -95,7 +102,7 @@
         }
         li {
           padding: 10px;
-          .btn{
+          .btn {
             padding: 0;
           }
         }
@@ -137,6 +144,7 @@
         font-weight: 700;
         opacity: 0.7;
         font-size: 1.25rem;
+        margin-right: auto;
         &:hover {
           text-decoration: none;
           opacity: 1;
