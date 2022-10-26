@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState, useCallback } from 'react'
 import $ from 'jquery'
 
-const speed = 10
+const speed = 1
 
 export default function Count({ unitScreen, endNumber }: { unitScreen: any, endNumber: number }) {
   const [number, setNumber] = useState("0")
