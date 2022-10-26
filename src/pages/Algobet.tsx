@@ -10,6 +10,7 @@ import Slider from 'components/Slider'
 import Count from 'components/Count'
 
 import { send } from 'emailjs-com'
+import Header from 'components/Header'
 
 const USER_ID = 'cN-nt46lnGb8utTSL' // userID
 const TEMPLATE_ID = 'template_wcosvxi' // templateID
@@ -149,42 +150,7 @@ const Algobet = () => {
       <div role="presentation" onClick={backToTop} id="back-to-top">
         <img src="/images/chevron_big_up.svg" alt="back to top" width="17" />
       </div>
-      <div id="header" className="header">
-        <div className="nav" data-aos={isMobile ? '' : 'fade-down'}>
-          <a href="/#home" className="nav-item">
-            Home
-          </a>
-          <a href="/#what-is-algobet" className="nav-item">
-            What is Algobet
-          </a>
-          <a href="/#features" className="nav-item">
-            Features
-          </a>
-          <a href="/#token" className="nav-item">
-            Token
-          </a>
-          <a href="/#roadmap" className="nav-item">
-            Roadmap
-          </a>
-          <a href="/#partner" className="nav-item">
-            Partner
-          </a>
-          <div className="nav-item">
-            <div className="dropdown-nav">
-              Docs
-              <img className="arrow-down" src="/images/arrow-down.svg" alt="arrow-down" />
-              <div className="dropdown-comp">
-                <div className="dropdown">
-                  <div className="dropdown-main">
-                    <div className="dd-item">white paper</div>
-                    <div className="dd-item">PitchDeck</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Header/>
       <div
         data-aos={isMobile ? '' : 'fade-left'}
         className="social-horizon social-fixed"
@@ -277,15 +243,12 @@ const Algobet = () => {
       </div>
       <div id="home" className="hero-section">
         <div data-aos={isMobile ? '' : 'fade-right'}>
-          <div>
-            <img className="logo" src="/images/logo.svg" alt="logo" />
-          </div>
           <h1>
             <div style={{ color: '#FFFFFF' }}>The Blockchain</div>
             <div style={{ color: '#FEDA00' }}>Betting Playground</div>
           </h1>
           <div className="sub-title">Get ready for the future of betting!</div>
-          <div className="d-flex group-btn-launch">
+          <div className="  group-btn-launch">
             <div className="btn-launch" role="presentation" onClick={() => setOpenPopup(true)}>
               Launch app
             </div>
