@@ -163,6 +163,7 @@ h2 {
   line-height: 142.5%;
   z-index: 10;
   font-size: 70px;
+  text-align: center;
   @include mw-768 {
     font-size: 45px;
   }
@@ -1113,7 +1114,8 @@ h1 {
   padding-top: 120px;
   padding-bottom: 180px;
   @include mw-768 {
-    padding-top: 0;
+  padding-bottom: 30px;
+  padding-top: 0;
   }
   .divider {
     width: 787px;
@@ -1145,9 +1147,16 @@ h1 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  @include mw-768{
+    gap: 20px;
+
+  }
   .partner-item {
     width: 20%;
     height: 100px;
+    @include mw-768{
+      width: 50%;
+    }
     img {
       width: 100%;
       height: 100%;
