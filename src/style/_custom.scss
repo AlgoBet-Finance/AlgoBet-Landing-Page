@@ -116,7 +116,7 @@
   padding: 91px 300px;
   font-size: 40px;
   overflow: hidden;
-  @include mw-768 {
+  @include mw-920 {
     padding: 16px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -126,7 +126,7 @@
     font-size: 24px;
   }
   .item {
-    @include mw-768 {
+    @include mw-920 {
       padding-left: 16px;
       text-align: center;
     }
@@ -197,6 +197,9 @@ h3 {
 footer {
   background: #feda00;
   padding: 77px 300px;
+  @include mw-920 {
+    padding: 32px;
+  }
   @include mw-768 {
     padding: 16px;
   }
@@ -204,7 +207,7 @@ footer {
 
 .footer {
   display: flex;
-  border-top: 1px solid #000000;
+  border-top: 1px solid #0000009d;
   align-items: center;
   justify-content: space-between;
   margin-top: 60px;
@@ -213,7 +216,8 @@ footer {
   @include mw-768 {
     flex-direction: column;
     //  align-items: flex-start;
-    margin-top: 0;
+    margin-top: 20px;
+    padding-top: 30px;
     text-align: center;
   }
 }
@@ -681,6 +685,9 @@ input:active {
   gap: 153px;
   flex-wrap: wrap;
   align-items: center;
+  @include mw-920 {
+    gap: 0;
+  }
   @include mw-768 {
     grid-template-columns: repeat(1, 1fr);
     gap: 0;
@@ -695,6 +702,10 @@ input:active {
   gap: 128px;
   flex-wrap: wrap;
   align-items: center;
+  @include mw-920 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
   @include mw-768 {
     grid-template-columns: repeat(1, 1fr);
     gap: 0;
@@ -703,12 +714,32 @@ input:active {
 .what {
   width: 100%;
   max-width: 1400px;
-  padding: 50px 16px;
+  padding: 50px 0;
   h3 {
     margin-bottom: 30px;
   }
   .mt-60 {
     margin-top: 60px;
+  }
+  &-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 16px 0px 0px;
+    gap: 10px;
+    @include mw-1100{
+    grid-template-columns: repeat(1, 1fr);
+
+    }
+  }
+  &-list-1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 16px 0px 0px;
+    gap: 10px;
+    @include mw-1100{
+    grid-template-columns: repeat(1, 1fr);
+
+    }
   }
   &-item {
     display: flex;
@@ -718,6 +749,7 @@ input:active {
     padding: 0 30px;
     @include mw-768 {
       margin-bottom: 16px;
+      padding: 0 16px;
     }
     .left {
       background-color: #feda00;
@@ -727,8 +759,8 @@ input:active {
       display: flex;
       align-items: center;
       justify-content: center;
-      @include mw-768 {
-        height: 30px;
+      @include mw-500 {
+        height: 100%;
         width: 60px;
       }
       div {
@@ -749,6 +781,8 @@ input:active {
       width: calc(100% - 100px);
 
       @include mw-768 {
+      width: calc(100% - 60px);
+
       }
 
       .content {
@@ -762,6 +796,7 @@ input:active {
         }
         p {
           transform: skewX(15deg);
+          font-size: 14px;
         }
       }
     }
@@ -771,7 +806,9 @@ input:active {
   &-agb {
     position: relative;
     margin-top: 82px;
-    width: 1200px;
+    width: 100%;
+    padding: 16px;
+    max-width: 1200px;
     @include mw-768 {
       width: 100%;
     }
@@ -783,6 +820,8 @@ input:active {
     @include mw-768 {
       flex-direction: column;
       align-items: center;
+      padding-bottom: 16px;
+
     }
     .left {
       background-color: #1e1e1e;
@@ -880,13 +919,13 @@ input:active {
     }
     &:first-child {
       padding-right: 100px;
-      @include mw-768 {
+      @include mw-920 {
         padding-right: 0;
       }
     }
     &:last-child {
       padding-left: 100px;
-      @include mw-768 {
+      @include mw-920 {
         padding-left: 0;
       }
       .left {
@@ -980,6 +1019,7 @@ h1 {
 
 .token-agb-image {
   width: 1320px;
+  max-width: 1320px;
   height: 695.5px;
 }
 

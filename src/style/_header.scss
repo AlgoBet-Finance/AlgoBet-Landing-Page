@@ -33,7 +33,7 @@
   // background: rgba(0, 8, 20, 0.9);
   z-index: 1000;
   backdrop-filter: blur(2px);
-  @include mw-768 {
+  @include mw-920 {
     padding: 1rem;
     text-align: center;
   }
