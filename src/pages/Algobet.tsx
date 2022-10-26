@@ -199,43 +199,38 @@ const Algobet = () => {
       </div>
       <div className="popup-join" data-aos={isMobile ? '' : 'fade-up'} style={{ display: openPopup ? 'flex' : 'none' }}>
         <div className="popup-join-fg">
-          <img
-            className="close-popup-join"
-            width={unitScreen * 55}
-            height={unitScreen * 40}
-            src="/images/close.svg"
-            alt="close"
-            onClick={() => setOpenPopup(false)}
-          />
+          <img className="close-popup-join" src="/images/close.svg" alt="close" onClick={() => setOpenPopup(false)} />
           <div className="text-comming-soon">Comming Soon</div>
-          <div className="join-group">
-            <div className="popup-join-input-div">
-              <input
-                name="emailPopup"
-                onChange={handleChange}
-                className="popup-join-input"
-                placeholder={isMobile ? '' : 'Your email address'}
-                value={emailPopup}
-              />
+          <div className="popup-body">
+            <div className="join-group">
+              <div className="popup-join-input-div">
+                <input
+                  name="emailPopup"
+                  onChange={handleChange}
+                  className="popup-join-input"
+                  placeholder="Your email address"
+                  value={emailPopup}
+                />
+              </div>
+              <div className="btn-join" role="presentation" onClick={() => onFollow(true)}>
+                {isSendMailPopupSuccess ? 'Followed' : 'Follow'}
+              </div>
             </div>
-            <div className="btn-join" role="presentation" onClick={() => onFollow(true)}>
-              {isSendMailPopupSuccess ? 'Followed' : 'Follow'}
-            </div>
-          </div>
-          <div className="join-group align-items-end join-group-social">
-            <img className="logo-join-group" src="/images/logo.svg" alt="logo" />
-            <div>
-              <div className="join-community">Join Our Community</div>
-              <div className="d-flex align-items-center join-community-social">
-                <a href="/">
-                  <img className="icon-telegram" src="/images/telegram-white.svg" alt="telegram" />
-                </a>
-                <a href="/">
-                  <img className="icon-twitter" src="/images/twitter-white.svg" alt="twitter" />
-                </a>
-                <a href="/">
-                  <img className="icon-facebook" src="/images/facebook-white.svg" alt="facebook" />
-                </a>
+            <div className=" join-group-social">
+              <img className="logo-join-group" src="/images/logo.svg" alt="logo" />
+              <div>
+                <div className="join-community">Join Our Community</div>
+                <div className="d-flex align-items-center join-community-social">
+                  <a href="/">
+                    <img className="icon-telegram" src="/images/telegram-white.svg" alt="telegram" />
+                  </a>
+                  <a href="/">
+                    <img className="icon-twitter" src="/images/twitter-white.svg" alt="twitter" />
+                  </a>
+                  <a href="/">
+                    <img className="icon-facebook" src="/images/facebook-white.svg" alt="facebook" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -261,7 +256,7 @@ const Algobet = () => {
       <div className="data-section">
         <div className="item">
           <div>Member</div>
-          <div className="data-number">{Count({ endNumber: 100, unitScreen })}</div>
+          <div className="data-number">{Count({ endNumber: 900, unitScreen })}</div>
         </div>
         <div className="item">
           <div>Entries</div>
@@ -269,11 +264,11 @@ const Algobet = () => {
         </div>
         <div className="item">
           <div>Telegram</div>
-          <div className="data-number">{Count({ endNumber: 100, unitScreen })}</div>
+          <div className="data-number">{Count({ endNumber: 800, unitScreen })}</div>
         </div>
         <div className="item">
           <div>Stake</div>
-          <div className="data-number">{Count({ endNumber: 100, unitScreen })}</div>
+          <div className="data-number">{Count({ endNumber: 1000, unitScreen })}</div>
         </div>
       </div>
       <div className="intro-section">
