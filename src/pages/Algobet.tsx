@@ -467,7 +467,9 @@ const Algobet = () => {
             <span style={{ color: '#FEDA00' }}>Product</span>
           </h2>
           <img className="divider" src="/images/header-divider.svg" alt="header-divider" />
-          <img className="device-image" data-aos={isMobile ? '' : 'fade-up'} src="/images/devices.png" alt="devices" />
+          <div className="device-image">
+            <img data-aos={isMobile ? '' : 'fade-up'} src="/images/devices.png" alt="devices" />
+          </div>
         </div>
         <div className="algobet-intro" id="features">
           <h2 data-aos={isMobile ? '' : 'zoom-in'}>

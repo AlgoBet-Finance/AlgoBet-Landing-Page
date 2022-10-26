@@ -1028,7 +1028,12 @@ h1 {
 }
 
 .device-image {
-  width: 1332px;
+  width: 100%;
+  max-width: 1332px;
+  padding: 50px 16px;
+  img{
+    width: 100%;
+  }
 }
 
 #features {
