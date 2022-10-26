@@ -1,12 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
-
-import { isMobile } from 'react-device-detect'
+import React, { useEffect, useState } from 'react'
 
 export default function Header() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [state, setState] = useState(false)
-  const mobile = useRef<any>(null)
-  useEffect(() => {
+   useEffect(() => {
     function handleResize() {
       if (window.innerWidth > 700) {
         setScreenWidth(window.innerWidth)
@@ -101,7 +98,7 @@ export default function Header() {
           <path d="M6 38H42" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
-      <ul className={state ? 'mobile active' : 'mobile '} ref={mobile}>
+      <ul className={state ? 'mobile active' : 'mobile '}  >
         <li>
           <a href="/#home" className="nav-item">
             Home
