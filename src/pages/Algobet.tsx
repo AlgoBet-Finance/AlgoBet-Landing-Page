@@ -197,7 +197,7 @@ const Algobet = () => {
           />
         </a>
       </div>
-      {/* <div className="popup-join" data-aos={isMobile ? '' : 'fade-up'} style={{ display: openPopup ? 'flex' : 'none' }}>
+      <div className="popup-join" data-aos={isMobile ? '' : 'fade-up'} style={{ display: openPopup ? 'flex' : 'none' }}>
         <div className="popup-join-fg">
           <img
             className="close-popup-join"
@@ -240,7 +240,7 @@ const Algobet = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       <div id="home" className="hero-section">
         <div data-aos={isMobile ? '' : 'fade-right'}>
           <h1>
