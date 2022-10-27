@@ -1,9 +1,10 @@
+import * as Constant from 'constant'
 import React, { useEffect, useState } from 'react'
 
 export default function Header() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [state, setState] = useState(false)
-   useEffect(() => {
+  useEffect(() => {
     function handleResize() {
       if (window.innerWidth > 700) {
         setScreenWidth(window.innerWidth)
@@ -53,7 +54,7 @@ export default function Header() {
   // }, [state])
   return (
     <div id="header" className="header">
-      <a href='./' className='header-logo'>
+      <a href="./" className="header-logo">
         <img className="" src="/images/logo.svg" alt="logo" />
         <img className="logo-text" src="/images/ALGOBET.svg" alt="logo" />
       </a>
@@ -83,8 +84,16 @@ export default function Header() {
             <div className="dropdown-comp">
               <div className="dropdown">
                 <div className="dropdown-main">
-                  <div className="dd-item">white paper</div>
-                  <div className="dd-item">PitchDeck</div>
+                  <div className="dd-item">
+                    <a target="_blank" href={Constant.DOCS_URL} className="dd-item" rel="noreferrer">
+                      white paper
+                    </a>
+                  </div>
+                  <div className="dd-item">
+                    <a target="_blank" href={Constant.PITCH_DECK_V1_URL} className="dd-item" rel="noreferrer">
+                      PitchDeck
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -98,7 +107,7 @@ export default function Header() {
           <path d="M6 38H42" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
-      <ul className={state ? 'mobile active' : 'mobile '}  >
+      <ul className={state ? 'mobile active' : 'mobile '}>
         <li>
           <a href="/#home" className="nav-item">
             Home

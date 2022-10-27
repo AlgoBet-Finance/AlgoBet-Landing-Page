@@ -11,6 +11,7 @@ import Count from 'components/Count'
 
 import { send } from 'emailjs-com'
 import Header from 'components/Header'
+import * as Constant from 'constant'
 
 const USER_ID = 'cN-nt46lnGb8utTSL' // userID
 const TEMPLATE_ID = 'template_wcosvxi' // templateID
@@ -669,7 +670,7 @@ const Algobet = () => {
             <a href="/" className="footer-item">
               Partner
             </a>
-            <a href="/" className="footer-item">
+            <a target="_blank" href={Constant.DOCS_URL} className="footer-item" rel="noreferrer">
               Docs
             </a>
             <a href="/" className="footer-item">
