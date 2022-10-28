@@ -1,6 +1,9 @@
 import * as Constant from 'constant'
 import React, { useEffect, useState } from 'react'
 
+export const PITCH_DECK_V1_URL =
+  'https://algobet-docs.s3.ap-southeast-1.amazonaws.com/Algobet-Pitch-Desk-v1.1_compressed.pdf'
+
 export default function Header() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [state, setState] = useState(false)
@@ -90,7 +93,7 @@ export default function Header() {
                     </a>
                   </div>
                   <div className="dd-item">
-                    <a target="_blank" href={Constant.PITCH_DECK_V1_URL} className="dd-item" rel="noreferrer">
+                    <a target="_blank" href={PITCH_DECK_V1_URL} className="dd-item" rel="noreferrer">
                       PitchDeck
                     </a>
                   </div>
