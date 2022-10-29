@@ -126,24 +126,28 @@ const Algobet = () => {
     if (isEmailPopup) {
       toSend.email = emailPopup
     }
-
-    send(SERVICE_ID, TEMPLATE_ID, toSend, USER_ID)
-      .then(() => {
-        if (isEmailPopup) {
-          setIsSendMailPopupSuccess(true)
-          setTimeout(() => {
-            setIsSendMailPopupSuccess(false)
-          }, 2000)
-        } else {
-          setIsSendMailFooterSuccess(true)
-          setTimeout(() => {
-            setIsSendMailFooterSuccess(false)
-          }, 2000)
-        }
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    if(toSend.email){
+      send(SERVICE_ID, TEMPLATE_ID, toSend, USER_ID)
+          .then(() => {
+            if (isEmailPopup) {
+              setIsSendMailPopupSuccess(true)
+              setTimeout(() => {
+                setOpenPopup(false)
+                setIsSendMailPopupSuccess(false)
+              }, 2000)
+            } else {
+              setIsSendMailFooterSuccess(true)
+              setTimeout(() => {
+                setIsSendMailFooterSuccess(false)
+              }, 2000)
+            }
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+    } else {
+    alert("You must enter your email first!")
+  }
   }
 
   return (
@@ -165,7 +169,7 @@ const Algobet = () => {
           src="/images/line.png"
           alt="png"
         />
-        <a href="/">
+        <a href={Constant.SOCIAL_CHANEL.TELEGRAM} target="_blank" rel="noreferrer">
           <img
             style={{
               height: unitScreen * 26,
@@ -176,7 +180,7 @@ const Algobet = () => {
             alt="telegram"
           />
         </a>
-        <a href="/">
+        <a href={Constant.SOCIAL_CHANEL.TWITTER} target="_blank" rel="noreferrer">
           <img
             style={{
               height: unitScreen * 26,
@@ -187,7 +191,7 @@ const Algobet = () => {
             alt="twitter"
           />
         </a>
-        <a href="/">
+        <a href={Constant.SOCIAL_CHANEL.FACEBOOK} target="_blank" rel="noreferrer">
           <img
             style={{
               height: unitScreen * 33,
@@ -201,8 +205,9 @@ const Algobet = () => {
       <div className="popup-join" data-aos={isMobile ? '' : 'fade-up'} style={{ display: openPopup ? 'flex' : 'none' }}>
         <div className="popup-join-fg">
           <img className="close-popup-join" src="/images/close.svg" alt="close" onClick={() => setOpenPopup(false)} />
-          <div className="text-comming-soon">Comming Soon</div>
+          <div className="text-comming-soon">Subscribe</div>
           <div className="popup-body">
+          <div className="join-community">Get the latest update, event news and more!</div>
             <div className="join-group">
               <div className="popup-join-input-div">
                 <input
@@ -214,7 +219,7 @@ const Algobet = () => {
                 />
               </div>
               <div className="btn-join" role="presentation" onClick={() => onFollow(true)}>
-                {isSendMailPopupSuccess ? 'Followed' : 'Follow'}
+                {isSendMailPopupSuccess ? 'Subscribed' : 'Subscribe'}
               </div>
             </div>
             <div className=" join-group-social">
@@ -225,7 +230,7 @@ const Algobet = () => {
                   <a href="/">
                     <img className="icon-telegram" src="/images/telegram-white.svg" alt="telegram" />
                   </a>
-                  <a href="/">
+                  <a href={Constant.SOCIAL_CHANEL.TELEGRAM} target="_blank" rel="noreferrer">
                     <img className="icon-twitter" src="/images/twitter-white.svg" alt="twitter" />
                   </a>
                   <a href="/">
@@ -534,7 +539,7 @@ const Algobet = () => {
               </div>
               <div className="right">
                 <div className="title">
-                  <span>Football Bet Champion - AGB</span>
+                  <span>Algobet sports - AGB</span>
                 </div>
                 <div className="content">
                   <ul>
@@ -623,13 +628,24 @@ const Algobet = () => {
 
           <div data-aos={isMobile ? '' : 'fade-up'} className="list-partner">
             <div className="partner-item">
-              <img className="coinmarketcap" src="/images/coinmarketcap.png" alt="coinmarketcap" />
-            </div>
-            <div className="partner-item">
               <img className="pinksale" src="/images/pinksale.png" alt="pinksale" />
             </div>
             <div className="partner-item">
+              <img className="coinmarketcap" src="/images/coinmarketcap.png" alt="coinmarketcap" />
+            </div>
+            <div className="partner-item">
               <img className="hpnetwork" src="/images/hpnetwork.png" alt="hpnetwork" />
+            </div>
+          </div>
+          <div data-aos={isMobile ? '' : 'fade-up'} className="list-partner">
+            <div className="partner-item">
+              <img className="coinmarketcap" src="/images/bnbchain.png" alt="bnbsmartchain" />
+            </div>
+            <div className="partner-item">
+              <img className="pinksale" src="/images/rugfreecoin.png" alt="rugfree" />
+            </div>
+            <div className="partner-item">
+              <img className="hpnetwork" src="/images/pancakeswap.png" alt="pancake" />
             </div>
           </div>
         </div>
@@ -681,23 +697,23 @@ const Algobet = () => {
           <div className="footer-community">
             <div className="footer-item footer-item-community">Join Our Community</div>
             <div className="d-flex align-items-center">
-              <a href="/">
+              <a href={Constant.SOCIAL_CHANEL.TELEGRAM} target="_blank" rel="noreferrer">
                 <img className="icon-telegram" src="/images/telegram.svg" alt="telegram" />
               </a>
-              <a href="/">
+              <a href={Constant.SOCIAL_CHANEL.TWITTER} target="_blank" rel="noreferrer">
                 <img className="icon-twitter" src="/images/twitter.svg" alt="twitter" />
               </a>
-              <a href="/">
+              <a href={Constant.SOCIAL_CHANEL.FACEBOOK} target="_blank" rel="noreferrer">
                 <img className="icon-facebook" src="/images/facebook.svg" alt="facebook" />
               </a>
             </div>
             <a
               target="_blank"
-              href="mailto:contactalgobet@gmail.com"
+              href={`mailto:${Constant.EMAIL_CONTACT_ALGOBET}`}
               className="footer-item footer-email"
               rel="noreferrer"
             >
-              contactalgobet@gmail.com
+              {Constant.EMAIL_CONTACT_ALGOBET}
             </a>
           </div>
         </div>
