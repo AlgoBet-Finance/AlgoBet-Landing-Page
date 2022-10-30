@@ -250,7 +250,7 @@ const Algobet = () => {
           </h1>
           <div className="sub-title">Get ready for the future of betting!</div>
           <div className="  group-btn-launch">
-            <div className="btn-launch" role="presentation" onClick={() => setOpenPopup(true)}>
+            <div className="btn-launch" role="presentation" onClick={() => window.open(Constant.APP_URL, '_blank', 'noopener,noreferrer')}>
               Launch app
             </div>
             <div className="btn-marketplace" role="presentation" onClick={() => setOpenPopup(true)}>
