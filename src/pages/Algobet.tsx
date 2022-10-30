@@ -15,7 +15,7 @@ import Header from 'components/Header'
 const USER_ID = 'cN-nt46lnGb8utTSL' // userID
 const TEMPLATE_ID = 'template_wcosvxi' // templateID
 const SERVICE_ID = 'service_apapfkd' // serviceID
-const APP_URL = 'http://app.algobet-sports.com.s3-website-ap-southeast-1.amazonaws.com/'
+const APP_URL = 'https://app.algobet-sports.com/'
 
 smoothscroll.polyfill()
 
