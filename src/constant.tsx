@@ -4,7 +4,7 @@ export const PITCH_DECK_V1_URL =
   'https://algobet-docs.s3.ap-southeast-1.amazonaws.com/Algobet-Pitch-Desk-v1.1_compressed.pdf'
 export const EMAIL_CONTACT_ALGOBET = 'contact@algobet-sports.com'
 export const SOCIAL_CHANEL = {
-  TELEGRAM: 'https://t.me',
+  TELEGRAM: 'https://t.me/AlgobetSports',
   TWITTER: 'https://twitter.com/AlgobetSports',
   FACEBOOK: 'https://www.facebook.com/algobetOfficial'
 }
