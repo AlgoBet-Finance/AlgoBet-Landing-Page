@@ -126,28 +126,28 @@ const Algobet = () => {
     if (isEmailPopup) {
       toSend.email = emailPopup
     }
-    if(toSend.email){
+    if (toSend.email) {
       send(SERVICE_ID, TEMPLATE_ID, toSend, USER_ID)
-          .then(() => {
-            if (isEmailPopup) {
-              setIsSendMailPopupSuccess(true)
-              setTimeout(() => {
-                setOpenPopup(false)
-                setIsSendMailPopupSuccess(false)
-              }, 2000)
-            } else {
-              setIsSendMailFooterSuccess(true)
-              setTimeout(() => {
-                setIsSendMailFooterSuccess(false)
-              }, 2000)
-            }
-          })
-          .catch((err) => {
-            console.log(err)
-          })
+        .then(() => {
+          if (isEmailPopup) {
+            setIsSendMailPopupSuccess(true)
+            setTimeout(() => {
+              setOpenPopup(false)
+              setIsSendMailPopupSuccess(false)
+            }, 2000)
+          } else {
+            setIsSendMailFooterSuccess(true)
+            setTimeout(() => {
+              setIsSendMailFooterSuccess(false)
+            }, 2000)
+          }
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     } else {
-    alert("You must enter your email first!")
-  }
+      alert('You must enter your email first!')
+    }
   }
 
   return (
@@ -207,7 +207,7 @@ const Algobet = () => {
           <img className="close-popup-join" src="/images/close.svg" alt="close" onClick={() => setOpenPopup(false)} />
           <div className="text-comming-soon">Subscribe</div>
           <div className="popup-body">
-          <div className="join-community">Get the latest update, event news and more!</div>
+            <div className="join-community">Get the latest update, event news and more!</div>
             <div className="join-group">
               <div className="popup-join-input-div">
                 <input
@@ -227,13 +227,13 @@ const Algobet = () => {
               <div>
                 <div className="join-community">Join Our Community</div>
                 <div className="d-flex align-items-center join-community-social">
-                  <a href="/">
+                  <a href={Constant.SOCIAL_CHANEL.TELEGRAM} target="_blank" rel="noreferrer">
                     <img className="icon-telegram" src="/images/telegram-white.svg" alt="telegram" />
                   </a>
-                  <a href={Constant.SOCIAL_CHANEL.TELEGRAM} target="_blank" rel="noreferrer">
+                  <a href={Constant.SOCIAL_CHANEL.TWITTER} target="_blank" rel="noreferrer">
                     <img className="icon-twitter" src="/images/twitter-white.svg" alt="twitter" />
                   </a>
-                  <a href="/">
+                  <a href={Constant.SOCIAL_CHANEL.FACEBOOK} target="_blank" rel="noreferrer">
                     <img className="icon-facebook" src="/images/facebook-white.svg" alt="facebook" />
                   </a>
                 </div>
@@ -250,7 +250,11 @@ const Algobet = () => {
           </h1>
           <div className="sub-title">Get ready for the future of betting!</div>
           <div className="  group-btn-launch">
-            <div className="btn-launch" role="presentation" onClick={() => window.open(Constant.APP_URL, '_blank', 'noopener,noreferrer')}>
+            <div
+              className="btn-launch"
+              role="presentation"
+              onClick={() => window.open(Constant.APP_URL, '_blank', 'noopener,noreferrer')}
+            >
               Launch app
             </div>
             <div className="btn-marketplace" role="presentation" onClick={() => setOpenPopup(true)}>
