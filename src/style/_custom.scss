@@ -1,49 +1,142 @@
 #home {
-  padding: 55px 78px;
-  height: 1080px;
-  h1 {
-    margin-top: 156px;
-  }
-  @include mw-768 {
-    height: 80vh;
-    padding: 24px;
-  }
 }
 
 .hero-section {
-  background-image: url('../assets/cover-bg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: space-between;
-  @include mw-768 {
-    background-image: url('../assets/home-mb.png');
-  }
-  h1 {
-    @include mw-768 {
-      font-size: 44px;
-    }
-  }
-  .sub-title {
-    font-size: 28px;
-    margin-top: 51px;
-    @include mw-768 {
-      font-size: 20px;
-      margin-top: 0px;
-    }
-  }
-  .group-btn-launch {
-    font-size: 25px;
-    margin-top: 152px;
+  // background-image: url("../assets/cover-bg.png");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // display: flex;
+  // justify-content: space-between;
+  // @include mw-768 {
+  //   background-image: url("../assets/home-mb.png");
+  // }
+  background-color: #0e0e0e;
+  // background: radial-gradient(49.06% 51% at 50% 50%, #0e0e0e 0.54%, #0e0e0e 2.38%, #071228 100%);
+  height: 100vh;
+  min-height: 900px;
+  max-height: 1080px;
+  overflow: hidden;
+
+  .inner {
+    position: relative;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    min-height: 900px;
+    max-height: 1080px;
+
+    // background: radial-gradient(49.06% 51% at 50% 50%, #4679ba 0.54%, #4577b7 2.38%, #071228 100%);
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   bottom: 0;
+    //   width: 100%;
+    //   height: 100px;
+    //   background: linear-gradient(to top, #1c0522, transparent);
+    //   z-index: 999999;
+    // }
     @include mw-768 {
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 60px;
+      height: 80vh;
+    }
+    .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    .coin {
+      // position: absolute;
+      // top: 80%;
+      // left: 60%;
+      // width: 75.69px;
+      // height: 87.34px;
+      // transform: rotate(-20.36deg);
+      // animation: MoveCoin 7s linear infinite;
+    }
+    #coin1 {
+      animation: MoveCoin2 34s linear infinite;
+    }
+    #coin2 {
+      animation: MoveCoin 14s linear infinite;
+    }
+    #coin3 {
+      animation: MoveCoin2 24s linear infinite;
+    }
+    #coin4 {
+      animation: MoveCoin 13s linear infinite;
+    }
+    #coin5 {
+      animation: MoveCoin2 15s linear infinite;
+    }
+    #coin6 {
+      animation: MoveCoin 16s linear infinite;
+    }
+    #coin7 {
+      animation: MoveCoin 17s linear infinite;
+    }
+  }
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+    padding-left: 300px;
+    h1 {
+      margin-top: 156px;
+      @include mw-768 {
+        font-size: 44px;
+      }
+    }
+    .sub-title {
+      font-size: 28px;
+      margin-top: 51px;
+      @include mw-768 {
+        font-size: 20px;
+        margin-top: 0px;
+      }
+    }
+    .group-btn-launch {
+      font-size: 25px;
+      margin-top: 152px;
+      display: flex;
+      @include mw-768 {
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 60px;
+      }
     }
   }
 }
+@keyframes MoveCoin {
+  0%,
+  100% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+}
 
+@keyframes MoveCoin2 {
+  0%,
+  100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(150px);
+    // filter: blur(21px);
+    opacity: 0.3;
+
+  }
+}
 .sub-title {
   line-height: 171.02%;
   font-family: 'Inter';
@@ -163,6 +256,7 @@ h2 {
   line-height: 142.5%;
   z-index: 10;
   font-size: 70px;
+  text-align: center;
   @include mw-768 {
     font-size: 45px;
   }
@@ -1031,7 +1125,12 @@ h1 {
 }
 
 .device-image {
-  width: 1332px;
+  width: 100%;
+  max-width: 1332px;
+  padding: 50px 16px;
+  img {
+    width: 100%;
+  }
 }
 
 #features {
@@ -1117,6 +1216,7 @@ h1 {
   padding-top: 120px;
   padding-bottom: 180px;
   @include mw-768 {
+    padding-bottom: 30px;
     padding-top: 0;
   }
   .divider {
@@ -1149,9 +1249,15 @@ h1 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  @include mw-768 {
+    gap: 20px;
+  }
   .partner-item {
     width: 20%;
     height: 100px;
+    @include mw-768 {
+      width: 50%;
+    }
     img {
       width: 100%;
       height: 100%;
