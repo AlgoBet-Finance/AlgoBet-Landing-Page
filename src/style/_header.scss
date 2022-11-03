@@ -179,8 +179,11 @@
   -webkit-transition: background-color 1000ms linear;
   -ms-transition: background-color 1000ms linear;
   transition: background-color 1000ms linear;
- transition: 1s;
+  transition: 1s;
   padding: 15px 4rem;
+  @include mw-768 {
+    padding: 1rem;
+  }
   .header-logo {
     color: $color-2;
     display: flex;

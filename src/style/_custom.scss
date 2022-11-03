@@ -60,7 +60,7 @@
       // animation: MoveCoin 7s linear infinite;
     }
     #coin1 {
-      animation: MoveCoin2 34s linear infinite;
+      // animation: MoveCoin2 34s linear infinite;
     }
     #coin2 {
       animation: MoveCoin 14s linear infinite;
@@ -69,7 +69,7 @@
       animation: MoveCoin2 24s linear infinite;
     }
     #coin4 {
-      animation: MoveCoin 13s linear infinite;
+      // animation: MoveCoin 13s linear infinite;
     }
     #coin5 {
       animation: MoveCoin2 15s linear infinite;
@@ -78,7 +78,7 @@
       animation: MoveCoin 16s linear infinite;
     }
     #coin7 {
-      animation: MoveCoin 17s linear infinite;
+      // animation: MoveCoin 17s linear infinite;
     }
   }
   .content {
@@ -87,8 +87,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 100px;
-    padding-left: 300px;
+    // padding: 100px;
+    padding-top: 100px;
     h1 {
       margin-top: 156px;
       @include mw-768 {
@@ -96,8 +96,8 @@
       }
     }
     .sub-title {
-      font-size: 28px;
-      margin-top: 51px;
+      font-size: 20px;
+      margin-top: 30px;
       @include mw-768 {
         font-size: 20px;
         margin-top: 0px;
@@ -105,7 +105,7 @@
     }
     .group-btn-launch {
       font-size: 25px;
-      margin-top: 152px;
+      margin-top: 100px;
       display: flex;
       @include mw-768 {
         flex-direction: column;

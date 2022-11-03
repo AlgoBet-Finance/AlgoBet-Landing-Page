@@ -269,21 +269,23 @@ const Algobet = () => {
           <img className="img coin" src="/images/hero/coin/07.png" alt="coin1" id="coin7" />
         </div>
         <div data-aos={isMobile ? '' : 'fade-right'} className="content">
-          <h1>
-            <div style={{ color: '#FFFFFF' }}>The Blockchain</div>
-            <div style={{ color: '#FEDA00' }}>Betting Playground</div>
-          </h1>
-          <div className="sub-title">Get ready for the future of betting!</div>
-          <div className="  group-btn-launch">
-            <div
-              className="btn-launch"
-              role="presentation"
-              onClick={() => window.open(Constant.APP_URL, '_blank', 'noopener,noreferrer')}
-            >
-              Launch app
-            </div>
-            <div className="btn-marketplace" role="presentation" onClick={() => setOpenPopup(true)}>
-              MARKETPLACE
+          <div className="container">
+            <h1>
+              <div style={{ color: '#FFFFFF' }}>The Blockchain</div>
+              <div style={{ color: '#FEDA00' }}>Betting Playground</div>
+            </h1>
+            <div className="sub-title">Become a betting superstar in this World Cup 2022 event!</div>
+            <div className="  group-btn-launch">
+              <div
+                className="btn-launch"
+                role="presentation"
+                onClick={() => window.open(Constant.APP_URL, '_blank', 'noopener,noreferrer')}
+              >
+                Launch app
+              </div>
+              <div className="btn-marketplace" role="presentation" onClick={() => setOpenPopup(true)}>
+                MARKETPLACE
+              </div>
             </div>
           </div>
         </div>
