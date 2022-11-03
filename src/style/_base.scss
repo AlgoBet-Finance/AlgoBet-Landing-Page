@@ -10,7 +10,11 @@
   font-family: 'Teko-Regular';
   src: local('Teko-Regular'), url('../fonts/Teko-Regular.ttf') format('truetype');
 }
-
+.tran {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

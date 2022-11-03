@@ -42,59 +42,67 @@ AOS.init({
   mirror: false, // whether elements should animate out while scrolling past them
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 })
+const useWindowScrollPositions = () => {
+  const [scrollPosition, setPosition] = useState(0)
+  useEffect(() => {
+    function updatePosition() {
+      setPosition(window.scrollY)
+    }
 
+    window.addEventListener('scroll', updatePosition)
+    updatePosition()
+
+    return () => window.removeEventListener('scroll', updatePosition)
+  }, [])
+
+  return scrollPosition
+}
 const Algobet = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [emailPopup, setEmailPopup] = useState('')
   const [emailFooter, setEmailFooter] = useState('')
   const [isSendMailPopupSuccess, setIsSendMailPopupSuccess] = useState(false)
   const [isSendMailFooterSuccess, setIsSendMailFooterSuccess] = useState(false)
+  // const [scrollPosition, setScrollPosition] = useState(0)
+  // const [scrollPosition, setPosition] = useState(0)
 
   // const unitScreen = 1
   const unitScreen = screenWidth / 1920
 
   const [indexFeature, setIndexFeature] = useState(1)
+
+  const scrollY = useWindowScrollPositions()
+  const backStyle = {
+    left: `${scrollY}'px'`,
+  }
   useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth > 700) {
-        setScreenWidth(window.innerWidth)
-      }
+    const back = document.getElementById('back')
+    // const coin1 = document.getElementById('coin1')
+    const coin1 = document.getElementById('coin1')
+    const coin2 = document.getElementById('coin2')
+    const coin3 = document.getElementById('coin3')
+    const coin4 = document.getElementById('coin4')
+    const coin5 = document.getElementById('coin5')
+    const coin6 = document.getElementById('coin6')
+    const coin7 = document.getElementById('coin7')
+    console.log(scrollY)
+    console.log(back)
+    if (back) {
+      back.style.top = `${scrollY * 0.55}px`
     }
-    // window.addEventListener('resize', handleResize)
+    if (coin1 && coin2 && coin3 && coin4 && coin5 && coin6 && coin7) {
+      coin1.style.top = `${scrollY * 0.05}px`
+      coin2.style.top = `${scrollY * 0.15}px`
+      coin3.style.top = `-${scrollY * 0.25}px`
+      coin4.style.top = `-${scrollY * 0.85}px`
+      coin5.style.top = `-${scrollY * 0.25}px`
+      coin6.style.top = `${scrollY * 0.55}px`
+      coin7.style.top = `-${scrollY * 0.35}px`
+      // if(scrollY>200){
 
-    const header = document.getElementById('header')
-    const backToTop = document.getElementById('back-to-top')
-    let sticky: number
-    if (header) {
-      sticky = header.offsetTop
+      // }
     }
-
-    function onScroll() {
-      if (window.pageYOffset > sticky) {
-        if (header && backToTop) {
-          header.classList.add('bg-header')
-          backToTop.style.display = 'flex'
-        }
-      } else if (header && backToTop) {
-        header.classList.remove('bg-header')
-        backToTop.style.display = 'none'
-      }
-    }
-    window.addEventListener('scroll', onScroll)
-
-    if (window.pageYOffset > 0) {
-      if (header && backToTop) {
-        header.classList.add('bg-header')
-        backToTop.style.display = 'flex'
-      }
-    }
-
-    let i = 1
-    setInterval(() => {
-      setIndexFeature(i % 5)
-      i++
-    }, 2000)
-  }, [])
+  }, [scrollY])
 
   useEffect(() => {
     setTimeout(() => {
@@ -197,7 +205,7 @@ const Algobet = () => {
           />
         </a>
       </div>
-      <div className="popup-join" data-aos={isMobile ? '' : 'fade-up'} style={{ display: openPopup ? 'flex' : 'none' }}>
+      {/* <div className="popup-join" data-aos={isMobile ? '' : 'fade-up'} style={{ display: openPopup ? 'flex' : 'none' }}>
         <div className="popup-join-fg">
           <img className="close-popup-join" src="/images/close.svg" alt="close" onClick={() => setOpenPopup(false)} />
           <div className="text-comming-soon">Comming Soon</div>
@@ -235,9 +243,26 @@ const Algobet = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div id="home" className="hero-section">
-        <div data-aos={isMobile ? '' : 'fade-right'}>
+        <div className="inner">
+          <img className="img" src="/images/hero/back.png" alt="back" id="back" />
+          <img
+            className="img"
+            src="/images/hero/front.png"
+            alt="front"
+            id="front"
+            data-aos={isMobile ? '' : 'fade-left'}
+          />
+          <img className="img coin" src="/images/hero/coin/01.png" alt="coin1" id="coin1" />
+          <img className="img coin" src="/images/hero/coin/02.png" alt="coin1" id="coin2" />
+          <img className="img coin" src="/images/hero/coin/03.png" alt="coin1" id="coin3" />
+          <img className="img coin" src="/images/hero/coin/04.png" alt="coin1" id="coin4" />
+          <img className="img coin" src="/images/hero/coin/05.png" alt="coin1" id="coin5" />
+          <img className="img coin" src="/images/hero/coin/06.png" alt="coin1" id="coin6" />
+          <img className="img coin" src="/images/hero/coin/07.png" alt="coin1" id="coin7" />
+        </div>
+        <div data-aos={isMobile ? '' : 'fade-right'} className="content">
           <h1>
             <div style={{ color: '#FFFFFF' }}>The Blockchain</div>
             <div style={{ color: '#FEDA00' }}>Betting Playground</div>
