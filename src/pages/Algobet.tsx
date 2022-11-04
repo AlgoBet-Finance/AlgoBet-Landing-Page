@@ -167,6 +167,7 @@ const Algobet = () => {
       <div
         data-aos={isMobile ? '' : 'fade-left'}
         className="social-horizon social-fixed"
+        data-aos-delay="1300"
         style={{ bottom: unitScreen * 70, right: unitScreen * 62 }}
       >
         <img
@@ -260,13 +261,56 @@ const Algobet = () => {
             id="front"
             data-aos={isMobile ? '' : 'fade-left'}
           />
-          <img className="img coin" src="/images/hero/coin/01.png" alt="coin1" id="coin1" />
-          <img className="img coin" src="/images/hero/coin/02.png" alt="coin1" id="coin2" />
-          <img className="img coin" src="/images/hero/coin/03.png" alt="coin1" id="coin3" />
-          <img className="img coin" src="/images/hero/coin/04.png" alt="coin1" id="coin4" />
-          <img className="img coin" src="/images/hero/coin/05.png" alt="coin1" id="coin5" />
-          <img className="img coin" src="/images/hero/coin/06.png" alt="coin1" id="coin6" />
-          <img className="img coin" src="/images/hero/coin/07.png" alt="coin1" id="coin7" />
+          <img
+            className="img coin"
+            src="/images/hero/coin/01.png"
+            alt="coin1"
+            id="coin1"
+            data-aos={isMobile ? '' : 'fade-down'}
+          />
+          <img
+            className="img coin"
+            src="/images/hero/coin/02.png"
+            alt="coin1"
+            id="coin2"
+            data-aos={isMobile ? '' : 'fade-down'}
+          />
+          <img
+            className="img coin"
+            src="/images/hero/coin/03.png"
+            alt="coin1"
+            id="coin3"
+            data-aos={isMobile ? '' : 'fade-down'}
+          />
+          <img
+            className="img coin"
+            src="/images/hero/coin/04.png"
+            alt="coin1"
+            id="coin4"
+            data-aos={isMobile ? '' : 'fade-down'}
+          />
+          <img
+            className="img coin"
+            src="/images/hero/coin/05.png"
+            alt="coin1"
+            id="coin5"
+            data-aos={isMobile ? '' : 'fade-down'}
+          />
+          <img
+            className="img coin"
+            src="/images/hero/coin/06.png"
+            alt="coin1"
+            id="coin6"
+            data-aos={isMobile ? '' : 'fade-down'}
+            data-aos-delay=" 300"
+          />
+          <img
+            className="img coin"
+            src="/images/hero/coin/07.png"
+            alt="coin1"
+            id="coin7"
+            data-aos={isMobile ? '' : 'fade-down'}
+          />
         </div>
         <div data-aos={isMobile ? '' : 'fade-right'} className="content">
           <div className="container">
