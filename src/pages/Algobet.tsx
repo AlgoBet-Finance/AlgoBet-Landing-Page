@@ -59,6 +59,7 @@ const useWindowScrollPositions = () => {
   return scrollPosition
 }
 const Algobet = () => {
+  const OPEN_LAUNCH_APP = process.env.OPEN_LAUNCH_APP
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [emailPopup, setEmailPopup] = useState('')
   const [emailFooter, setEmailFooter] = useState('')
@@ -323,7 +324,9 @@ const Algobet = () => {
               <div
                 className="btn-launch"
                 role="presentation"
-                onClick={() => window.open(Constant.APP_URL, '_blank', 'noopener,noreferrer')}
+                onClick={() =>
+                  OPEN_LAUNCH_APP ? window.open(Constant.APP_URL, '_blank', 'noopener,noreferrer') : setOpenPopup(true)
+                }
               >
                 Launch app
               </div>
