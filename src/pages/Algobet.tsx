@@ -339,16 +339,16 @@ const Algobet = () => {
       </div>
       <div className="data-section">
         <div className="item">
-          <div>Member</div>
-          <div className="data-number">{Count({ endNumber: 900, unitScreen })}</div>
+          <div>Members</div>
+          <div className="data-number">{Count({ endNumber: 5000, unitScreen })}</div>
         </div>
         <div className="item">
-          <div>Entries</div>
-          <div className="data-number">{Count({ endNumber: 100, unitScreen })}</div>
+          <div>Twitter</div>
+          <div className="data-number">{Count({ endNumber: 7000, unitScreen })}</div>
         </div>
         <div className="item">
           <div>Telegram</div>
-          <div className="data-number">{Count({ endNumber: 800, unitScreen })}</div>
+          <div className="data-number">{Count({ endNumber: 3000, unitScreen })}</div>
         </div>
         <div className="item">
           <div>Stake</div>
